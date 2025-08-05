@@ -4,7 +4,7 @@ import 'package:app_08_news/models/new.dart';
 import "package:http/http.dart" as http;
 
 class NewsService {
-  String apiKey = "1b1ae630e92248b2bd89e3661a0bf843";
+  String apiKey = "";
 
   Future<List<New>> fetchNews() async {
     var response = await http.get(
@@ -21,7 +21,6 @@ class NewsService {
     List<New> articles = [];
 
     for (var element in articlesJson) {
-      print(element);
       New newItem = New(
         title: element["title"],
         description: element["description"],
